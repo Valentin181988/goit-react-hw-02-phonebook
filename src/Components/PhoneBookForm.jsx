@@ -56,7 +56,8 @@ export class PhoneBookForm extends Component {
                     required
                     onChange={this.handleInputChange}/>
                 <button 
-                    type="submit">Add contact
+                    type="submit"
+                    disabled={!this.state.number || !this.state.name}>Add contact
                 </button>
           </form>
         );
