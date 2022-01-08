@@ -3,10 +3,11 @@ export const ContactsList = ({contacts, onDeleteContact}) => {
         <div>
             <p>Contacts</p>
             <ul>
-                {contacts.map(({id, name, number}) => 
+                {contacts.map(({id, name, number}) =>(
                   <li key={number}>{name}: {number}
                       <button onClick={() => onDeleteContact(id)}>Delete</button>
-                  </li>)}
+                  </li>) 
+                  )}
             </ul>
         </div>
     );
