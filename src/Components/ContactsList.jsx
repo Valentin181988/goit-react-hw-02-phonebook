@@ -1,4 +1,4 @@
-export const Contacts = ({contacts}) => {
+export const ContactsList = ({contacts}) => {
     return (
         <div>
             <p>Contacts</p>

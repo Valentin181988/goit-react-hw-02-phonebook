@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { nanoid } from 'nanoid';
 import { PhoneBookForm } from './Components/PhoneBookForm';
-import { Contacts } from './Components/Contacts';
+import { ContactsList } from './Components/ContactsList';
+import { Filter } from './Components/Filter';
 class App extends Component {
   state = {
     contacts: [],
@@ -20,12 +21,34 @@ class App extends Component {
     }))
   };
 
+  changeSearchFilter = event => {
+    this.setState({filter: event.currentTarget.value})
+  };
+
+  getVisibleContacts = () => {
+    const {contacts, filter} = this.state;
+
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(contact => 
+      contact.name.toLowerCase().includes(normalizedFilter));
+  };
+
+  
   render() {
-    return (
-      <div>
-        <PhoneBookForm onSubmit={this.formSubmitHandler}/>
-        <Contacts contacts={this.state.contacts}/> 
-      </div>
+
+     const { filter } = this.state;
+
+      const searchContact = this.getVisibleContacts();
+
+      return (
+        <div>
+          <PhoneBookForm onSubmit={this.formSubmitHandler}/>
+          
+          <Filter value={filter} onChange={this.changeSearchFilter}/>
+          
+          <ContactsList contacts={searchContact}/> 
+        </div>
     );
   };
   
