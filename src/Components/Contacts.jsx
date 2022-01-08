@@ -1,9 +1,9 @@
-export const Contacts = () => {
+export const Contacts = ({contacts}) => {
     return (
         <div>
             <p>Contacts</p>
             <ul>
-                <li></li>
+                {contacts.map(({name, number}) => <li key={number}>{name}: {number}</li>)}
             </ul>
         </div>
     );

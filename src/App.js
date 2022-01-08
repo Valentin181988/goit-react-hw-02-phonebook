@@ -8,14 +8,12 @@ class App extends Component {
     filter: ''
   };
 
-  formSubmitHandler = (data) => {
+  formSubmitHandler = ({name, number}) => {
     const contact = {
       id: nanoid(),
-      name: data.name,
-      number: data.number
+      name,
+      number
     };
-
-    console.log(contact)
 
     this.setState(prevState => ({
       contacts: [contact, ...prevState.contacts] 
@@ -26,7 +24,7 @@ class App extends Component {
     return (
       <div>
         <PhoneBookForm onSubmit={this.formSubmitHandler}/>
-        <Contacts /> 
+        <Contacts contacts={this.state.contacts}/> 
       </div>
     );
   };
