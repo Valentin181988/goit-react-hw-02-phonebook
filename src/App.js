@@ -7,16 +7,19 @@ class App extends Component {
     filter: ''
   };
 
-  
+  formSubmitHandler = data => {
+    console.log(data);
+  }
 
-  /* addContact = text => {
+  
+ /* addContact = text => {
     console.log(text);
   }; */
 
   render() {
     return (
       <div>
-        <PhoneBookForm />
+        <PhoneBookForm onSubmit={this.formSubmitHandler}/>
         <Contacts /> 
       </div>
     );
