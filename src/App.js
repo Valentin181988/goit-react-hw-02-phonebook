@@ -1,26 +1,23 @@
 import React, { Component } from "react";
-
+import { PhoneBookForm } from './Components/PhoneBookForm';
+import { Contacts } from './Components/Contacts';
 class App extends Component {
   state = {
     contacts: [],
-    name: ''
+    filter: ''
   };
+
+  
+
+  /* addContact = text => {
+    console.log(text);
+  }; */
 
   render() {
     return (
       <div>
-        <form>
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-            required />
-
-          <button>Add contact</button>
-        </form>
-        
+        <PhoneBookForm />
+        <Contacts /> 
       </div>
     );
   };
