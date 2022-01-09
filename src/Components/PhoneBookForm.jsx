@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 
 export class PhoneBookForm extends Component {
@@ -64,5 +66,9 @@ export class PhoneBookForm extends Component {
     };
 
 }; 
+
+PhoneBookForm.propTypes = {
+    onSubmit: PropTypes.func
+ };
    
        

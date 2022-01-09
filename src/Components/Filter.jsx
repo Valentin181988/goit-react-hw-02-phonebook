@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const Filter = ({value, onChange}) => {
     return(
         <div>
@@ -9,3 +11,8 @@ export const Filter = ({value, onChange}) => {
           </div>
     );
 };
+
+Filter.propTypes = {
+    onChange: PropTypes.func,
+    value: PropTypes.string
+ };
