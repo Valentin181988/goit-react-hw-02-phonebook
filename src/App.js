@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { nanoid } from 'nanoid';
-import { withAlert } from 'react-alert';
+
 import { PhoneBookForm } from './Components/PhoneBookForm';
 import { ContactsList } from './Components/ContactsList';
 import { Filter } from './Components/Filter';
@@ -13,12 +13,10 @@ class App extends Component {
 
   formSubmitHandler = ({name, number}) => {
 
-    const alert = this.props.alert;
-    
     const alreadyInList = this.state.contacts.find(contact => contact.name === name);
 
     if (alreadyInList !== undefined) {
-        alert.show('Hahaha!');
+        alert('Hahaha!');
 
         return;
     };
@@ -74,6 +72,5 @@ class App extends Component {
   
 }
 
-export default withAlert()(App)
 
-/* export default App; */
+export default App;
