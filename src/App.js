@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { nanoid } from 'nanoid';
-
 import { PhoneBookForm } from './Components/PhoneBookForm';
 import { ContactsList } from './Components/ContactsList';
 import { Filter } from './Components/Filter';
@@ -16,7 +15,7 @@ class App extends Component {
     const alreadyInList = this.state.contacts.find(contact => contact.name === name);
 
     if (alreadyInList !== undefined) {
-        alert('Hahaha!');
+        alert(`${name} is already in contacts`);
 
         return;
     };
