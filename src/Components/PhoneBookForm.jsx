@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 
+import { Form, Label, Input, SubmitButton } from "./PhoneBookForm.styled";
+
 export class PhoneBookForm extends Component {
 
     state = {
@@ -35,9 +37,9 @@ export class PhoneBookForm extends Component {
         const {name, number} = this.state;
 
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor={this.nameInputId}>Name</label>
-                <input
+            <Form onSubmit={this.handleSubmit}>
+                <Label htmlFor={this.nameInputId}>Name</Label>
+                <Input
                     type="text"
                     name="name"
                     id={this.nameInputId}
@@ -47,8 +49,8 @@ export class PhoneBookForm extends Component {
                     required 
                     onChange={this.handleInputChange}/>
     
-                <label htmlFor={this.numberInputId}>Number</label>
-                <input
+                <Label htmlFor={this.numberInputId}>Number</Label>
+                <Input
                     type="number"
                     name="number"
                     id={this.numberInputId}
@@ -57,11 +59,11 @@ export class PhoneBookForm extends Component {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     onChange={this.handleInputChange}/>
-                <button 
+                <SubmitButton 
                     type="submit"
                     disabled={!this.state.number || !this.state.name}>Add contact
-                </button>
-          </form>
+                </SubmitButton>
+          </Form>
         );
     };
 

@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { PhonebookTitle } from './PhoneBookTitle.styled';
 
 export const PhoneBookTitle = ({title}) => {
   return (
       <>
-        <h1>{title}</h1>
+        <PhonebookTitle>{title}</PhonebookTitle>
       </>
   );
 };

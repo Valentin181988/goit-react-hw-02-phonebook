@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { Contacts } from './ContactsTitle.styled';
 
 export const ContactsTitle = ({title}) => {
-    return <h2>{title}</h2>
+    return <Contacts>{title}</Contacts>
 };
 
 ContactsTitle.propTypes = {
