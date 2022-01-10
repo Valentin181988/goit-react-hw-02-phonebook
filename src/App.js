@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { PhoneBookTitle } from "./Components/PhoneBookTitle";
 import { PhoneBookForm } from './Components/PhoneBookForm';
 import { ContactsList } from './Components/ContactsList';
+import { ContactsTitle } from "./Components/ContactsTitle";
 import { Filter } from './Components/Filter';
 
 class App extends Component {
@@ -63,6 +64,7 @@ class App extends Component {
         <div>
           <PhoneBookTitle title="Phone book"/>
           <PhoneBookForm onSubmit={this.formSubmitHandler}/>
+          <ContactsTitle title="Contacts"/>
           <Filter value={filter} onChange={this.changeSearchFilter}/>
           <ContactsList contacts={searchContact} onDeleteContact={this.deleteContact}/> 
         </div>
